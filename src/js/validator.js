@@ -5,11 +5,7 @@ export default class Validator {
   }
 
   validateUsername(username) {
-    if (!this.usernameReg.test(username)) {
-      return false;
-    }
-
-    if (this.consecutiveNumbersReg.test(username)) {
+    if (!this.usernameReg.test(username) || this.consecutiveNumbersReg.test(username)) {
       return false;
     }
 
